@@ -196,7 +196,8 @@ def load_extra_path_config(yaml_path):
                     continue
                 full_path = y
                 if base_path is not None:
-                    full_path = os.path.join(base_path, full_path)
+                    expanded_base_path = os.path.expanduser(base_path)
+                    full_path = os.path.join(base_path, expanded_base_path)
                 logging.info("Adding extra search path {} {}".format(x, full_path))
                 folder_paths.add_model_folder_path(x, full_path)
 
@@ -253,6 +254,11 @@ if __name__ == "__main__":
         input_dir = os.path.abspath(args.input_directory)
         logging.info(f"Setting input directory to: {input_dir}")
         folder_paths.set_input_directory(input_dir)
+    
+    if args.user_directory:
+        user_dir = os.path.abspath(args.user_directory)
+        logging.info(f"Setting user directory to: {user_dir}")
+        folder_paths.set_user_directory(user_dir)
 
     if args.quick_test_for_ci:
         exit(0)
