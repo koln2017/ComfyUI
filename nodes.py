@@ -1544,10 +1544,20 @@ class LoadImage:
 
     RETURN_TYPES = ("IMAGE", "MASK")
     FUNCTION = "load_image"
-    def load_image(self, image):
-        image_path = folder_paths.get_annotated_filepath(image)
-        
-        img = node_helpers.pillow(Image.open, image_path)
+    # KEEN 增加参数支持设置图片路径
+    # KEEN 增加支持图片数据
+    # KEEN keep_alph-保存四通道图
+    def load_image(self, image, default_path=True, is_data=False, keep_alpha=False):
+        # KEEN
+        if default_path:
+            image_path = folder_paths.get_annotated_filepath(image)
+        else:
+            image_path = image
+        # KEEN
+        if is_data:
+            img = image
+        else:
+            img = node_helpers.pillow(Image.open, image_path)
         
         output_images = []
         output_masks = []
@@ -1560,7 +1570,9 @@ class LoadImage:
 
             if i.mode == 'I':
                 i = i.point(lambda i: i * (1 / 255))
-            image = i.convert("RGB")
+            # KEEN
+            if keep_alpha==False:
+                image = i.convert("RGB")
 
             if len(output_images) == 0:
                 w = image.size[0]

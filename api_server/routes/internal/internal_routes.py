@@ -2,7 +2,10 @@ from aiohttp import web
 from typing import Optional
 from folder_paths import models_dir, user_directory, output_directory
 from api_server.services.file_service import FileService
-import app.logger
+### KEEN 使用绝对路径解决app路径冲突问题
+# import app.logger
+import app.interface.ComfyUI.app.logger
+###
 
 class InternalRoutes:
     '''
