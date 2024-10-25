@@ -13,3 +13,6 @@ spandrel
 1. 兼容本地工程需要的修改（修改处都注释了KEEN）
    修改点包括：load_image字段, import导入因app路径冲突
    修改文件： nodes.py、server.py、internal_routes.py
+
+## 20241025
+1. 同步comfyui master到20241025 => 0.2.4+
