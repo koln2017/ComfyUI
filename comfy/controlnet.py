@@ -36,13 +36,11 @@ import comfy.cldm.mmdit
 import comfy.ldm.hydit.controlnet
 import comfy.ldm.flux.controlnet
 import comfy.cldm.dit_embedder
-<<<<<<< HEAD
-=======
+
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from comfy.hooks import HookGroup
 
->>>>>>> upstream/master
 
 def broadcast_image_to(tensor, target_batch_size, batched_number):
     current_batch_size = tensor.shape[0]

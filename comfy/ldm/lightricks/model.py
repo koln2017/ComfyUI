@@ -379,10 +379,7 @@ class LTXVModel(torch.nn.Module):
                  positional_embedding_max_pos=[20, 2048, 2048],
                  dtype=None, device=None, operations=None, **kwargs):
         super().__init__()
-<<<<<<< HEAD
-=======
         self.generator = None
->>>>>>> upstream/master
         self.dtype = dtype
         self.out_channels = in_channels
         self.inner_dim = num_attention_heads * attention_head_dim
@@ -419,11 +416,7 @@ class LTXVModel(torch.nn.Module):
 
         self.patchifier = SymmetricPatchifier(1)
 
-<<<<<<< HEAD
-    def forward(self, x, timestep, context, attention_mask, frame_rate=25, guiding_latent=None, transformer_options={}, **kwargs):
-=======
     def forward(self, x, timestep, context, attention_mask, frame_rate=25, guiding_latent=None, guiding_latent_noise_scale=0, transformer_options={}, **kwargs):
->>>>>>> upstream/master
         patches_replace = transformer_options.get("patches_replace", {})
 
         indices_grid = self.patchifier.get_grid(
@@ -439,12 +432,6 @@ class LTXVModel(torch.nn.Module):
             ts = torch.ones([x.shape[0], 1, x.shape[2], x.shape[3], x.shape[4]], device=x.device, dtype=x.dtype)
             input_ts = timestep.view([timestep.shape[0]] + [1] * (x.ndim - 1))
             ts *= input_ts
-<<<<<<< HEAD
-            ts[:, :, 0] = 0.0
-            timestep = self.patchifier.patchify(ts)
-            input_x = x.clone()
-            x[:, :, 0] = guiding_latent[:, :, 0]
-=======
             ts[:, :, 0] = guiding_latent_noise_scale * (input_ts[:, :, 0] ** 2)
             timestep = self.patchifier.patchify(ts)
             input_x = x.clone()
@@ -460,8 +447,6 @@ class LTXVModel(torch.nn.Module):
                 guiding_noise = scale * torch.randn(size=noise_shape, device=x.device, generator=self.generator)
 
                 x[:, :, 0] = guiding_noise[:, :, 0] + x[:, :, 0] *  (1.0 - scale[:, :, 0])
-
->>>>>>> upstream/master
 
         orig_shape = list(x.shape)
 

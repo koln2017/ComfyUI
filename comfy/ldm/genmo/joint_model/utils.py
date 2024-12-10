@@ -1,11 +1,7 @@
 #original code from https://github.com/genmoai/models under apache 2.0 license
 #adapted to ComfyUI
 
-<<<<<<< HEAD
-from typing import Optional, Tuple
-=======
 from typing import Optional
->>>>>>> upstream/master
 
 import torch
 import torch.nn as nn

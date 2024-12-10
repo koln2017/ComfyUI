@@ -3,11 +3,7 @@ from torch import nn
 from functools import partial
 import math
 from einops import rearrange
-<<<<<<< HEAD
-from typing import Any, Mapping, Optional, Tuple, Union, List
-=======
 from typing import Optional, Tuple, Union
->>>>>>> upstream/master
 from .conv_nd_factory import make_conv_nd, make_linear_nd
 from .pixel_norm import PixelNorm
 
