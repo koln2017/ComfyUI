@@ -1,7 +1,11 @@
 #original code from https://github.com/genmoai/models under apache 2.0 license
 #adapted to ComfyUI
 
+<<<<<<< HEAD
 from typing import Callable, List, Optional, Tuple, Union
+=======
+from typing import List, Optional, Tuple, Union
+>>>>>>> upstream/master
 from functools import partial
 import math
 

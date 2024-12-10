@@ -1,0 +1,21 @@
+version: "2"
+services:    
+    comfyui_dev:
+        container_name: comfyui_dev
+        image: registry.cn-heyuan.aliyuncs.com/lingtu-ai/ai-py310-torch20-grpc-gpu:comfyui-1.2
+        volumes:
+         - /mnt:/mnt
+         - /mnt/sfs_turbo/keen/models:/project/models
+         - /mnt/sfs_turbo/keen/comfyui:/project
+        working_dir: /project
+        restart: on-failure
+        command: bash
+        tty: true
+        cap_add:
+          - SYS_PTRACE    # 对docker开发CAP的gdb调试功能
+        environment:
+            NVIDIA_VISIBLE_DEVICES: all
+            RUNTIME_ENV: "dev"  # 运行时环境：dev-开发环境、fat-测试环境、prod-线上环境
+        runtime: nvidia
+        network_mode: host
+

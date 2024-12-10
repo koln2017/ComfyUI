@@ -1,6 +1,9 @@
 from typing import Tuple, Union
 
+<<<<<<< HEAD
 import torch
+=======
+>>>>>>> upstream/master
 
 from .dual_conv3d import DualConv3d
 from .causal_conv3d import CausalConv3d
