@@ -43,3 +43,6 @@ spandrel
 
 ## 20241202
 1. 同步comfyui master到 20241202 => 0.3.6
+
+## 20241210
+1. 同步comfyui master到 20241210 => 0.3.7+
