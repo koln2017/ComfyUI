@@ -28,10 +28,10 @@ import comfy.utils
 import comfy.model_management
 import node_helpers
 ### KEEN 使用绝对路径解决app路径冲突问题
-# from app.frontend_management import FrontendManager
-# from app.user_manager import UserManager
-from app.interface.ComfyUI.app.frontend_management import FrontendManager
-from app.interface.ComfyUI.app.user_manager import UserManager
+from app.frontend_management import FrontendManager
+from app.user_manager import UserManager
+# from app.interface.ComfyUI.app.frontend_management import FrontendManager
+# from app.interface.ComfyUI.app.user_manager import UserManager
 ###
 from model_filemanager import download_model, DownloadModelStatus
 from typing import Optional

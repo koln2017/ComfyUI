@@ -3,8 +3,8 @@ from typing import Optional
 from folder_paths import models_dir, user_directory, output_directory, folder_names_and_paths
 from api_server.services.file_service import FileService
 ### KEEN 使用绝对路径解决app路径冲突问题
-# import app.logger
-import app.interface.ComfyUI.app.logger
+import app.logger
+# import app.interface.ComfyUI.app.logger
 ###
 
 class InternalRoutes:
