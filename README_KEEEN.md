@@ -90,3 +90,8 @@ Downloading: "https://github.com/xinntao/facexlib/releases/download/v0.2.0/parsi
 1. apt-get install libgl1-mesa-glx
 2. pip uninstall opencv-python-headless
 3. pip install opencv-python-headless
+
+# ComfyUI-Inspyrenet-Rembg
+ModuleNotFoundError: No module named 'transparent_background'
+pip install transparent_background
+
