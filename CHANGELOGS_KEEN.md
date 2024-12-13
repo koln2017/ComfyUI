@@ -16,3 +16,6 @@ spandrel
 
 ## 20241025
 1. 同步comfyui master到20241025 => 0.2.4+
+
+## 20241213
+1. 拉出分支，用于支持Flux Tools，对应comfyui tag v0.3.3
