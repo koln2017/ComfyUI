@@ -65,6 +65,9 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 # 启动
 python main.py --listen '0.0.0.0'
 
+Please describe the content, composition and style of the picture, and use FLUX prompt output
+
+Write a FLUX prompt for this image, please describe the content, composition and style of the image,
 
 downloading https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth to /project/models/sams/sam_vit_h_4b8939.pth
 downloading https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/GroundingDINO_SwinT_OGC.cfg.py to /project/models/grounding-dino/GroundingDINO_SwinT_OGC.cfg.py
@@ -94,3 +97,12 @@ Downloading: "https://github.com/xinntao/facexlib/releases/download/v0.2.0/parsi
 # ComfyUI-Inspyrenet-Rembg
 ModuleNotFoundError: No module named 'transparent_background
 pip install transparent_background
+
+# Omini
+diffusers==0.31.0
+accelerate==1.0.0
+
+litelama
+
+# InstantX ipadapter
+protobuf=3.20.3
