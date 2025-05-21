@@ -28,6 +28,12 @@ import comfy.utils
 import comfy.model_management
 import node_helpers
 from comfyui_version import __version__
+### KEEN 使用绝对路径解决app路径冲突问题
+# from app.interface.ComfyUI.app.frontend_management import FrontendManager
+# from app.interface.ComfyUI.app.user_manager import UserManager
+# from app.interface.ComfyUI.app.model_manager import ModelFileManager
+# from typing import Optional
+# from api_server.routes.internal.internal_routes import InternalRoutes
 from app.frontend_management import FrontendManager
 from app.user_manager import UserManager
 from app.model_manager import ModelFileManager

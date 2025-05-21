@@ -2,14 +2,18 @@
 
 ## 更新方法
 ```shell
-# 从上游仓库获取最新更新
+# 假设要更新comfyui官方仓库的最新master（假设最接近的tags是v0.3.34）
+# 1. 首先在comfyui自维护远程仓库新建一个分支f_v0.3.34+
+# 2. 本地仓库更新切换至f_v0.3.34+
+git pull 
+git checkout f_v0.3.34+
+# 3. 从上游仓库获取最新更新
 git fetch upstream
-# 将上游的更改合并到你的本地分支，可能需要解决冲突
+# 4.1. 将上游的更改合并到你的本地分支，可能需要解决冲突
 git merge upstream/master
-# 如果你想要合并上游的其他分支（例如 feature-branch），可以直接使用 git merge：
+# 4.2. 如果你想要合并上游的其他分支（例如 feature-branch），可以直接使用 git merge：
 git merge upstream/feature-branch
-
-# 将合并后的代码推送到你的 fork 仓库
+# 5. 将合并后的代码推送到你的 fork 仓库
 git push
 
 # 合并所有标签，下面的命令将所有的标签从 upstream 添加到本地仓库
@@ -46,3 +50,6 @@ spandrel
 
 ## 20241210
 1. 同步comfyui master到 20241210 => 0.3.7+
+
+## 20250520
+1. 同步comfyui master到 20250520 => 0.3.34+

@@ -1,13 +1,13 @@
 version: "2"
 services:    
-    comfyui_dev:
-        container_name: comfyui_dev
+    comfyui_dev334:
+        container_name: comfyui_dev334
         image: registry.cn-heyuan.aliyuncs.com/lingtu-ai/ai-py310-torch20-grpc-gpu:comfyui-1.3
         volumes:
          - /mnt:/mnt
          - /mnt/sfs_turbo/keen/models:/project/models
-         - /mnt/sfs_turbo/keen/app/comfyui_037:/project
-         - /mnt/sfs_turbo/keen/app/custom_nodes:/project/custom_nodes
+         - /mnt/sfs_turbo/keen/app/comfyui_0334:/project
+         - /mnt/sfs_turbo/keen/app/custom_nodes_0334:/project/custom_nodes
         working_dir: /project
         restart: on-failure
         command: bash
