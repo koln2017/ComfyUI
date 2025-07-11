@@ -63,7 +63,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 
 # 启动
-python main.py --listen '0.0.0.0'
+python main.py --listen '0.0.0.0' --port 8187
 
 Please describe the content, composition and style of the picture, and use FLUX prompt output
 
@@ -108,11 +108,15 @@ litelama
 protobuf=3.20.3
 
 # 新框架要求
-comfyui-frontend-package==1.19.9
-comfyui-workflow-templates==0.1.14
+comfyui-frontend-package==1.23.4
+comfyui-workflow-templates==0.1.35
+pydantic-settings~=2.0
+
 # 视频
 av>=14.2.0
 imageio-ffmpeg
+
+
 
 
 # 报错解决 **Exception Message:** TypeError: Cannot delete property 'value' of #<BooleanWidget2> ## Stack Trace #8086

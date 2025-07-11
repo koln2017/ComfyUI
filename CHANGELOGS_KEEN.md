@@ -9,8 +9,9 @@ git pull
 git checkout f_v0.3.34+
 # 3. 从上游仓库获取最新更新
 git fetch upstream
-# 4.1. 将上游的更改合并到你的本地分支，可能需要解决冲突
-git merge upstream/master
+# 4.1. 将上游的更改合并到你当前的本地分支，可能需要解决冲突
+# git merge upstream/master
+git merge upstream/master --no-edit # --no-edit跳过输入合并信息
 # 4.2. 如果你想要合并上游的其他分支（例如 feature-branch），可以直接使用 git merge：
 git merge upstream/feature-branch
 # 5. 将合并后的代码推送到你的 fork 仓库
@@ -25,6 +26,10 @@ git push origin --tags  # 推送所有标签
 
 # 如果想要回退git merge的代码
 git reset --hard commit_id
+
+
+# 如果新拉取的仓库，没有绑定comfyui远程仓库，需要绑定，绑定方法
+git remote add upstream https://github.com/comfyanonymous/ComfyUI.git
 
 ```
 
@@ -53,3 +58,6 @@ spandrel
 
 ## 20250520
 1. 同步comfyui master到 20250520 => 0.3.34+
+   
+## 20250711
+1. 同步comfyui master到 20250711 => 0.3.44+
